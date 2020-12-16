@@ -17,7 +17,7 @@
  
 - name: install base tools and packages
   yum:
-    name: "{{ item }}"_ 
+    name: "{{ item }}"
     state: latest
   with_items:
     - httpie
