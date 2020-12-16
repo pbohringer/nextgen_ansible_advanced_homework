@@ -1,27 +1,23 @@
 [rhel-7-server-rpms]
 name=Red Hat Enterprise Linux 7
-#baseurl=http://192.168.0.5/repos/rhel-7-server-rpms
 baseurl=http://192.0.2.253/repos/rhel-7-server-rpms
 enabled=1
 gpgcheck=0
 
 [rhel-7-server-rh-common-rpms]
 name=Red Hat Enterprise Linux 7 Common
-#baseurl=http://192.168.0.5/repos/rhel-7-server-rh-common-rpms
 baseurl=http://192.0.2.253/repos/rhel-7-server-rh-common-rpms
 enabled=1
 gpgcheck=0
 
 [rhel-7-server-extras-rpms]
 name=Red Hat Enterprise Linux 7 Extras
-#baseurl=http://192.168.0.5/repos/rhel-7-server-extras-rpms
 baseurl=http://192.0.2.253/repos/rhel-7-server-extras-rpm
 enabled=1
 gpgcheck=0
 
 [rhel-7-server-optional-rpms]
 name=Red Hat Enterprise Linux 7 Optional
-#baseurl=http://192.168.0.5/repos/rhel-7-server-optional-rpms
 baseurl=http://192.0.2.253/repos/rhel-7-server-optional-rpms
 enabled=1
 gpgcheck=0
