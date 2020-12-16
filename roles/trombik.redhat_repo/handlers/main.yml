@@ -1,6 +1,0 @@
----
-
-- name: Restart redhat_repo
-  service:
-    name: redhat_repo
-    state: restarted
