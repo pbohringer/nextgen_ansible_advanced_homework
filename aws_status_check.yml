@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: jumpbox_all
   gather_facts: false
   tasks:
   - name: Check the instances status
