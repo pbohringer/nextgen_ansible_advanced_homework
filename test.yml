@@ -28,5 +28,5 @@
   gather_facts: true
   tasks:
   - name: check
-    command: cat /etc/hosts
+    command: cat /etc/hosts /etc/haproxy/haproxy.cfg
 
