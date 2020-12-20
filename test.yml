@@ -27,9 +27,15 @@
   become: yes
   gather_facts: true
   tasks:
-  - name: check
+  - name: check host haproxy
     command: cat /etc/hosts /etc/haproxy/haproxy.cfg
     register: find_output
-
+    
   - debug:
       var: find_output
+
+  - name: check backup hosts
+    command: ls -l /etc/hosts*
+    register: back_up
+  - debug:
+      var: back_up
