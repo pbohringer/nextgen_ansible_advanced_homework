@@ -3,6 +3,5 @@
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 
 {% for host in groups['apps'] %}
-{% set short_name = item.split('.') %}
-{{ hostvars[item]['ansible_host'] }}  {{ item }} {{ short_name[0] }}
+{{ host }}   {{ hostvars[host]['name'] }}
 {% endfor %}
