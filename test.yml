@@ -29,4 +29,7 @@
   tasks:
   - name: check
     command: cat /etc/hosts /etc/haproxy/haproxy.cfg
+    register: find_output
 
+  - debug:
+      var: find_output
