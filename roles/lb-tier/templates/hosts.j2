@@ -3,5 +3,5 @@
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 
 {% for host in groups['apps'] %}
-{{ host }}   {{ hostvars[host]['name'] }}
+{{ host }}   {{ item.private_v4 }}
 {% endfor %}
