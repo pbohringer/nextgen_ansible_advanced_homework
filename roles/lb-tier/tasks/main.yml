@@ -23,15 +23,18 @@
   stat: "path=/etc/hosts.rhel"
   tags: etc_hosts
   register: etc_hosts_rhel
+  ignore_errors: yes
 
 - name: "backup rhel generated /etc/hosts"
   command: "cp /etc/hosts /etc/hosts.rhel"
   when: etc_hosts_rhel.stat.islnk is not defined
   tags: etc_hosts
+  ignore_errors: yes
 
 - name: "install /etc/hosts.ansible file"
   command: "cp /etc/hosts.ansible /etc/hosts"
   tags: etc_hosts
+  ignore_errors: yes
 
 
 - name: configure haproxy to load balance over app servers
