@@ -18,7 +18,6 @@ group_name: workstation
 host_name: workstation-{{osp_GUID}}.{{osp_DOMAIN}}
 job_template_name_3tier_app: "04_3tier app deployment on QA Env"
 app_deploy_playbook: site-3tier-app.yml
-app_deploy_playbook_aws: aws-3tier-app.yml
 vault_name: yum_repo_vault
 job_template_name_osp_instances_delete: "Nuke QA Env"
 osp_instances_delete_playbook: site-osp-delete.yml
@@ -39,7 +38,9 @@ aws_read_keys: "AWS Access Key"
 aws_status_playbook: aws_status_check.yml
 job_template_aws_status_check: "07_Prod Check the status of AWS instances"
 job_template_name_3tier_app_aws: "09_3 tier app on Prod"
+app_deploy_playbook_aws: aws-3tier-app.yml
 aws_cred_name: "Creds for AWS instances"
+vault_name: yum_repo_vault
 job_template_smoke_aws: "10_Smoke test Prod env"
 aws_smoke_app_playbook: site-smoketest-aws.yml
 
