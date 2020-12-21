@@ -10,27 +10,28 @@
     name: "{{ payload }}"
     enabled: yes
 
-#- name: Generate /etc/hosts file
-#  template:
-#    src: hosts.j2
-#    dest: /etc/hosts.ansible
-#    owner: root
-#    group: root
-#    mode: 0644
-#
-#- name: "check if rhel generated hosts file has a backup"
-#  stat: "path=/etc/hosts.rhel"
-#  tags: etc_hosts
-#  register: etc_hosts_rhel
-#
-#- name: "backup rhel generated /etc/hosts"
-#  command: "cp /etc/hosts /etc/hosts.rhel"
-#  when: etc_hosts_rhel.stat.islnk is not defined
-#  tags: etc_hosts
-#
-#- name: "install /etc/hosts.ansible file"
-#  command: "cp /etc/hosts.ansible /etc/hosts"
-#  tags: etc_hosts
+- name: Generate /etc/hosts file
+  template:
+    src: hosts.j2
+    dest: /etc/hosts.ansible
+    owner: root
+    group: root
+    mode: 0644
+  ignore_errors: yes
+
+- name: "check if rhel generated hosts file has a backup"
+  stat: "path=/etc/hosts.rhel"
+  tags: etc_hosts
+  register: etc_hosts_rhel
+
+- name: "backup rhel generated /etc/hosts"
+  command: "cp /etc/hosts /etc/hosts.rhel"
+  when: etc_hosts_rhel.stat.islnk is not defined
+  tags: etc_hosts
+
+- name: "install /etc/hosts.ansible file"
+  command: "cp /etc/hosts.ansible /etc/hosts"
+  tags: etc_hosts
 
 
 - name: configure haproxy to load balance over app servers
